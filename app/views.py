@@ -23,8 +23,8 @@ def add(request):
         if form.is_valid():
     # Save a new Profile object from the form's data.
             new_profile = form.save()
-
-            return render(request, 'app/index.html', {'form':form})
+            data = Profile.objects.all()
+            return render(request, 'app/list.html', {'data':data})
             
 
     return render(request, 'app/create.html', {'form': form}) 
