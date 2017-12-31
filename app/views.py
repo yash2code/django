@@ -7,3 +7,9 @@ def index(request):
         'title' : 'Home page',
     }
     return render(request, "app/index.html",context)
+
+def create(request):
+    context={
+        'title' : 'Create User',
+    }
+    return render(request, "app/create.html",context)
