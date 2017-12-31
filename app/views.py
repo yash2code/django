@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from app.forms import ProfileForm
 from django.views.generic import TemplateView
+from .models import Profile
 
 # Create your views here.
 
@@ -28,12 +29,10 @@ def add(request):
 
     return render(request, 'app/create.html', {'form': form}) 
 
-''' class CreateView(TemplateView):
-    template_name = 'app/create.html'
-
-    def get(self,request):
-        form = ProfileForm()
-        return render(request, self.template_name, {'form':form}) '''
+def li(request):
+    data = Profile.objects.all()
+    return render(request, "app/list.html",{'data':data})
+    
 
 
     
