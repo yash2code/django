@@ -21,7 +21,6 @@
 
 <!-- Custom styles for this template -->
 <link href="{% static 'css/creative.min.css' %}" rel="stylesheet"> 
-<link href="{% static 'css/style.css' %}" rel="stylesheet"> 
 {% endblock %}
 
 {% block script %}
@@ -44,16 +43,17 @@
 <!-- Mixins-->
 <header class="masthead text-center text-white d-flex">
         <div class="container my-auto">
-    <form>
-        <div class="form-group">
+    <form method="POST" action="/add">{% csrf_token %}
+       <!-- <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Name">
+            <input type="text" class="form-control" id="name" placeholder="Name" name="name">
         </div>
         <div class="form-group">
             <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
+        </div>-->
+        {{form.as_p}}
     
     
         
